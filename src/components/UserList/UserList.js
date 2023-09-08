@@ -1,9 +1,11 @@
 import styles from "./UserList.module.css";
-const UserList = () => {
+const UserList = (props) => {
   return (
     <div className={styles.users}>
       <ul>
-        <li>HIiiiiiii</li>
+        {props.items.map((item) => (
+          <li key={item.id}>{`${item.username} : ${item.age}`}</li>
+        ))}
       </ul>
     </div>
   );
