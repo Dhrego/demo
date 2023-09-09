@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import UserInput from "./components/UserInput/UserInput";
 import UserList from "./components/UserList/UserList";
-// import ErrorModal from "./components/ErrorModal/ErrorModal";
 
 const App = () => {
   const [list, setList] = useState([
@@ -23,11 +22,11 @@ const App = () => {
       return updatedList;
     });
   };
+
   return (
     <div>
       <UserInput addToList={dataHandler} />
       <UserList items={list} onDeleteItem={deleteItemHandler} />
-      {/* <ErrorModal /> */}
     </div>
   );
 };

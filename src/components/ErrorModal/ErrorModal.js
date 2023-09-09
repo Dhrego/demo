@@ -1,14 +1,18 @@
 import styles from "./ErrorModal.module.css";
-const ErrorModal = () => {
+
+const ErrorModal = (props) => {
+  const hideHandler = () => {
+    props.onShow();
+  };
   return (
-    <div className={styles.backdrop}>
+    <div className={styles.backdrop} onClick={hideHandler}>
       <div className={styles.modal}>
         <div className={styles.header}>
-          <h2>Error</h2>
-          <div className={styles.content}>
-            lorems dfasdfsdf asdf asdf asdf asdf asdf as
-          </div>
-          <button className={styles.actions}>close</button>
+          <h2>{props.show.title}</h2>
+          <div className={styles.content}>{props.show.message}</div>
+          <button className={styles.actions} onClick={hideHandler}>
+            close
+          </button>
         </div>
       </div>
     </div>
