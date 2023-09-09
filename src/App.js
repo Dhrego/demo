@@ -15,10 +15,18 @@ const App = () => {
       { ...user, id: Math.random().toString() },
     ]);
   };
+  const deleteItemHandler = (itemId) => {
+    console.log("clicked", itemId);
+    setList((prev) => {
+      const updatedList = prev.filter((item) => item.id !== itemId);
+      console.log(updatedList, "updated list");
+      return updatedList;
+    });
+  };
   return (
     <div>
       <UserInput addToList={dataHandler} />
-      <UserList items={list} />
+      <UserList items={list} onDeleteItem={deleteItemHandler} />
       {/* <ErrorModal /> */}
     </div>
   );
