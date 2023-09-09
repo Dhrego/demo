@@ -11,6 +11,7 @@ const UserInput = (props) => {
   const usernameInputHandler = (e) => {
     setUsername(e.target.value);
   };
+
   const ageInputHandler = (e) => {
     setAge(e.target.value);
   };

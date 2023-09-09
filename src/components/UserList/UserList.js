@@ -14,10 +14,6 @@ const UserList = (props) => {
             key={item.id}
             id={item.id}
           >{`${item.username} : ${item.age}`}</UserItem>
-          // <li
-          //   onClick={deleteHandler}
-          //   key={item.id}
-          // >{`${item.username} : ${item.age}`}</li>
         ))}
       </ul>
     </div>
